@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Console
 {
-    internal enum Compass
+    public enum Compass
     {
         N,  //North Facing
         E,  //East Facing

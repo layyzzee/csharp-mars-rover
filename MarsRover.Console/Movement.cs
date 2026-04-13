@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Console
 {
-    internal enum Movement
+    public enum Movement
     {
         L,  //Turn Left
         R,  //Turn Right
