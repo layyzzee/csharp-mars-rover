@@ -73,5 +73,53 @@ namespace MarsRover.Test
             rover.Rotate(Movement.L);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
         }
+        [Test]
+        public void Rotate_ReturnWest_WhenInputM()
+        {
+            var startPos = new Position(0, 0, Compass.W);
+            var rover = new Rover(startPos);
+            rover.Rotate(Movement.M);
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
+        }
+        [Test]
+        public void Move_ReturnX3Y3_WhenInputX3Y2N()
+        {
+            var startPos = new Position(3, 2, Compass.N);
+            var rover = new Rover(startPos);
+            rover.Move();
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
+        }
+        [Test]
+        public void Move_ReturnX3Y3_WhenInputX3Y4S()
+        {
+            var startPos = new Position(3, 4, Compass.S);
+            var rover = new Rover(startPos);
+            rover.Move();
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
+        }
+        [Test]
+        public void Move_ReturnX3Y3_WhenInputX2Y3E()
+        {
+            var startPos = new Position(2, 3, Compass.E);
+            var rover = new Rover(startPos);
+            rover.Move();
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
+        }
+        [Test]
+        public void Move_ReturnX3Y3_WhenInputX4Y4W()
+        {
+            var startPos = new Position(4, 3, Compass.W);
+            var rover = new Rover(startPos);
+            rover.Move();
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
+        }
     }
 }

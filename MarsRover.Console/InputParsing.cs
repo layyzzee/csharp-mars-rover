@@ -8,7 +8,7 @@ namespace MarsRover.Terminal
 {
     public class InputParsing
     {
-        public static Plateau? PlateauParser(string input)     //Should take x y
+        public static Plateau? PlateauParser(string input)
         {
             string[] inputElements = input.Split(' ');
             if (inputElements.Length != 2)
@@ -23,7 +23,7 @@ namespace MarsRover.Terminal
             return null;
         }
 
-        public static Position? StartingPointParser(string input) //Should take x y d
+        public static Position? StartingPointParser(string input)
         {
             string[] inputElements = input.Split(' ');
             if (inputElements.Length != 3)
@@ -52,7 +52,7 @@ namespace MarsRover.Terminal
             return null;
         }
 
-        public static List<Movement>? RoverMovementParse(string input) //Should take LMRM string
+        public static List<Movement>? RoverMovementParse(string input)
         {
             var movementList = new List<Movement>();
             foreach(char c in input.ToUpper())

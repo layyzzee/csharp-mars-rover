@@ -42,5 +42,17 @@ namespace MarsRover.Terminal
             }
             CurrentPosition = CurrentPosition with { Direction = nextDirection };
         }
+
+        public void Move()
+        {
+            var currentDirection = CurrentPosition.Direction;
+            switch (currentDirection)
+            {
+                case Compass.N: CurrentPosition = CurrentPosition with { YCoord = CurrentPosition.YCoord + 1 }; break;
+                case Compass.E: CurrentPosition = CurrentPosition with { XCoord = CurrentPosition.XCoord + 1 }; break;
+                case Compass.S: CurrentPosition = CurrentPosition with { YCoord = CurrentPosition.YCoord - 1 }; break;
+                case Compass.W: CurrentPosition = CurrentPosition with { XCoord = CurrentPosition.XCoord - 1 }; break;
+            }
+        }
     }
 }
