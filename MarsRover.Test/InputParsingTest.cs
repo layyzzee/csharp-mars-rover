@@ -109,34 +109,6 @@ public class InputParsingTest
         var result = InputParser.StartingPointParser("8 3 e");
         Assert.That(result, Is.Null);
     }
-    [Test]
-    public void MoveRover_ReturnNull_WithinputEmpty()
-    {
-        var result = InputParser.RoverMovementParse("MR1ML");
-        var expected = new List<Instruction>() { Instruction.M, Instruction.R, Instruction.M, Instruction.L };
-        Assert.That(result, Is.EqualTo(expected));
-    }
-    [Test]
-    public void MoveRover_ReturnMRML_WithinputMRML()
-    {
-        var result = InputParser.RoverMovementParse("MRML");
-        var expected = new List<Instruction>() { Instruction.M, Instruction.R, Instruction.M, Instruction.L };
-        Assert.That(result, Is.EqualTo(expected));
-    }
-    [Test]
-    public void MoveRover_ReturnMRML_WithinputMRIML()
-    {
-        var result = InputParser.RoverMovementParse("MRIML");
-        var expected = new List<Instruction>() { Instruction.M, Instruction.R, Instruction.M, Instruction.L };
-        Assert.That(result, Is.EqualTo(expected));
-    }
-    [Test]
-    public void MoveRover_ReturnMRML_WithinputMR1ML()
-    {
-        var result = InputParser.RoverMovementParse("MR1ML");
-        var expected = new List<Instruction>() { Instruction.M, Instruction.R, Instruction.M, Instruction.L };
-        Assert.That(result, Is.EqualTo(expected));
-    }
 
     [Test]
     public void InstructionParser_ReturnsL_WhenInputL()

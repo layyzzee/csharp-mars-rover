@@ -52,26 +52,6 @@ namespace MarsRover.Terminal
             return null;
         }
 
-        public static List<Instruction>? RoverMovementParse(string input)
-        {
-            var movementList = new List<Instruction>();
-            foreach(char c in input.ToUpper())
-            {
-                switch (c)
-                {
-                    case 'L': movementList.Add(Instruction.L); break;
-                    case 'R': movementList.Add(Instruction.R); break;
-                    case 'M': movementList.Add(Instruction.M); break;
-                    default: continue;
-                }
-            }
-            if (movementList.Count > 0)
-            {
-                return movementList;
-            }
-            return null;
-        }
-
         public static List<Instruction> InstructionParser(string input)
         {
             var instructionList = new List<Instruction>();

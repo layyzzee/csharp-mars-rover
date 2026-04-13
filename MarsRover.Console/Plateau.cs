@@ -8,18 +8,16 @@ namespace MarsRover.Terminal
 {
     public record class Plateau
     {
-        public int Length { get; set; }
-        public int Height { get; set; }
-        public Plateau(int length, int height)
+        private readonly PlateauSize _size;
+        public Plateau(PlateauSize size)
         {
-            if(length < 0 || height < 0) throw new ArgumentOutOfRangeException("Input must be Positive input");
-            if (length > 10 || height > 10) throw new ArgumentOutOfRangeException("Input must be less than 10");
-            Length = length;
-            Height = height;
+            _size = size;
+            if(size.Lengh < 0 || size.Height < 0) throw new ArgumentOutOfRangeException("Input must be Positive input");
+            if (size.Lengh > 10 || size.Height > 10) throw new ArgumentOutOfRangeException("Input must be less than 10");
         }
         public bool IsWithinPlateau(int xCoord, int yCoord)
         {
-            return xCoord >= 0 && xCoord <= Length && yCoord >= 0 && yCoord <= Height;
+            return xCoord >= 0 && xCoord <= _size.Lengh && yCoord >= 0 && yCoord <= _size.Height;
         }
     }
 }
