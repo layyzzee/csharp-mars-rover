@@ -31,16 +31,16 @@ namespace MarsRover.Terminal
                 Console.WriteLine("Invalid arguments, please input in the format: XCoordinate YCoordinate FacingCompassDirection");
                 return null;
             }
+            Compass? direction = inputElements[2] switch
+            {
+                "N" => Compass.N,
+                "E" => Compass.E,
+                "S" => Compass.S,
+                "W" => Compass.W,
+                _ => null
+            };
             if (int.TryParse(inputElements[0], out int xCoord) && int.TryParse(inputElements[1], out int yCoord))
             {
-                Compass? direction = inputElements[2] switch
-                {
-                    "N" => Compass.N,
-                    "E" => Compass.E,
-                    "S" => Compass.S,
-                    "W" => Compass.W,
-                    _ => null
-                };
                 if (direction != null)
                 {
                     return new Position(xCoord, yCoord, direction.Value);
@@ -52,7 +52,7 @@ namespace MarsRover.Terminal
             return null;
         }
 
-        public static List<Movement> RoverMovementParse(string input) //Should take LMRM string
+        public static List<Movement>? RoverMovementParse(string input) //Should take LMRM string
         {
             var movementList = new List<Movement>();
             foreach(char c in input.ToUpper())
