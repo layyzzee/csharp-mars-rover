@@ -10,7 +10,7 @@ namespace MarsRover.Test
     internal class RoverTest
     {
         [Test]
-        public void Rotate_NorthToEast_WhenTurningRight()
+        public void Rotate_ReturnEast_WhenInputR()
         {
             var startPos = new Position(0, 0, Compass.N);
             var rover = new Rover(startPos);
@@ -18,7 +18,7 @@ namespace MarsRover.Test
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
         }
         [Test]
-        public void Rotate_NorthToSouth_WhenTurningRight()
+        public void Rotate_ReturnSouth_WhenInputR()
         {
             var startPos = new Position(0, 0, Compass.E);
             var rover = new Rover(startPos);
@@ -26,7 +26,7 @@ namespace MarsRover.Test
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
         }
         [Test]
-        public void Rotate_NorthToWest_WhenTurningRight()
+        public void Rotate_ReturnWest_WhenInputR()
         {
             var startPos = new Position(0, 0, Compass.S);
             var rover = new Rover(startPos);
@@ -34,12 +34,44 @@ namespace MarsRover.Test
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
         }
         [Test]
-        public void Rotate_NorthToNorth_WhenTurningRight()
+        public void Rotate_ReturnNorth_WhenInputR()
         {
             var startPos = new Position(0, 0, Compass.W);
             var rover = new Rover(startPos);
             rover.Rotate(Movement.R);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
+        }
+        [Test]
+        public void Rotate_ReturnWest_WhenInputL()
+        {
+            var startPos = new Position(0, 0, Compass.N);
+            var rover = new Rover(startPos);
+            rover.Rotate(Movement.L);
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
+        }
+        [Test]
+        public void Rotate_ReturnNorth_WhenInputL()
+        {
+            var startPos = new Position(0, 0, Compass.E);
+            var rover = new Rover(startPos);
+            rover.Rotate(Movement.L);
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
+        }
+        [Test]
+        public void Rotate_ReturnEast_WhenInputL()
+        {
+            var startPos = new Position(0, 0, Compass.S);
+            var rover = new Rover(startPos);
+            rover.Rotate(Movement.L);
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
+        }
+        [Test]
+        public void Rotate_ReturnSouth_WhenInputL()
+        {
+            var startPos = new Position(0, 0, Compass.W);
+            var rover = new Rover(startPos);
+            rover.Rotate(Movement.L);
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
         }
     }
 }
