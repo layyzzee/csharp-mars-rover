@@ -4,7 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string plateauInput = "10 10";
+            string startingPositionInput = "2 5 E";
+            string roverMoveInput = "LMLLMRRRRM";
+
+            var gamePlateau = InputParsing.PlateauParser(plateauInput);
+            var gameStartPosition = InputParsing.StartingPointParser(startingPositionInput);
+            var roverMovement = InputParsing.RoverMovementParse(roverMoveInput);
+
+            Console.WriteLine(gamePlateau);
+            Console.WriteLine(gameStartPosition);
+            Console.WriteLine(string.Join(", ", roverMovement));
+
         }
     }
 }

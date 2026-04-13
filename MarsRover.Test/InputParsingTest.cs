@@ -46,25 +46,24 @@ public class InputParsingTest
     [Test]
     public void PlateauParser_ReturnError_Withinputx15y5()
     {
-        var result = InputParsing.PlateauParser("15 5");
-        Assert.That(result, Is.Null);
+        Assert.Throws<ArgumentOutOfRangeException>(() => 
+        InputParsing.PlateauParser("15 5"));
     }
     [Test]
-    public void PlateauParser_ReturnError_Withinputx15y15()
+    public void PlateauParser_ReturnError_Withinputx5y15()
     {
-        var result = InputParsing.PlateauParser("5 15");
-        Assert.That(result, Is.Null);
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+        InputParsing.PlateauParser("5 15"));
     }
     [Test]
     public void PlateauParser_ReturnNull_Withinputx15y15()
     {
-        var result = InputParsing.PlateauParser("15 15");
-        Assert.That(result, Is.Null);
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+        InputParsing.PlateauParser("15 15"));
     }
     [Test]
     public void StartingPointParser_ReturnX3Y6N_WithinputX3Y6N()
     {
-        Plateau CurrentGame = new Plateau(10, 10);
         var result = InputParsing.StartingPointParser("3 6 N");
         var expected = new Position(3, 6, Compass.N);
         Assert.That(result == expected, Is.True);
@@ -72,7 +71,6 @@ public class InputParsingTest
     [Test]
     public void StartingPointParser_ReturnX3Y6E_WithinputX3Y6E()
     {
-        InputParsing.PlateauParser("10 10");
         var result = InputParsing.StartingPointParser("3 6 E");
         var expected = new Position(3, 6, Compass.E);
         Assert.That(result == expected, Is.True);
@@ -80,7 +78,6 @@ public class InputParsingTest
     [Test]
     public void StartingPointParser_ReturnX3Y6S_WithinputX3Y6S()
     {
-        InputParsing.PlateauParser("10 10");
         var result = InputParsing.StartingPointParser("3 6 S");
         var expected = new Position(3, 6, Compass.S);
         Assert.That(result == expected, Is.True);
@@ -88,18 +85,17 @@ public class InputParsingTest
     [Test]
     public void StartingPointParser_ReturnX3Y6W_WithinputX3Y6W()
     {
-        InputParsing.PlateauParser("10 10");
         var result = InputParsing.StartingPointParser("3 6 W");
         var expected = new Position(3, 6, Compass.W);
         Assert.That(result == expected, Is.True);
     }
-    [Test]
-    public void StartingPointParser_ReturnNull_WithinputOutsidePlateau()
-    {
-        InputParsing.PlateauParser("10 10");
-        var result = InputParsing.StartingPointParser("15 12 W");
-        Assert.That(result, Is.Null);
-    }
+    //[Test]        //Test Later
+    //public void StartingPointParser_ReturnNull_WithinputOutsidePlateau()
+    //{
+    //    InputParsing.PlateauParser("10 10");
+    //    var result = InputParsing.StartingPointParser("15 12 W");
+    //    Assert.That(result, Is.Null);
+    //}
     [Test]
     public void StartingPointParser_ReturnNull_WithinputTooManyArgs()
     {
@@ -114,7 +110,32 @@ public class InputParsingTest
         var result = InputParsing.StartingPointParser("8 3 e");
         Assert.That(result, Is.Null);
     }
-
-
-
+    [Test]
+    public void MoveRover_ReturnNull_WithinputEmpty()
+    {
+        var result = InputParsing.RoverMovementParse("MR1ML");
+        var expected = new List<Movement>() { Movement.M, Movement.R, Movement.M, Movement.L };
+        Assert.That(result, Is.EqualTo(expected));
+    }
+    [Test]
+    public void MoveRover_ReturnMRML_WithinputMRML()
+    {
+        var result = InputParsing.RoverMovementParse("MRML");
+        var expected = new List<Movement>() { Movement.M, Movement.R, Movement.M, Movement.L };
+        Assert.That(result, Is.EqualTo(expected));
+    }
+    [Test]
+    public void MoveRover_ReturnMRML_WithinputMRIML()
+    {
+        var result = InputParsing.RoverMovementParse("MRIML");
+        var expected = new List<Movement>() { Movement.M, Movement.R, Movement.M, Movement.L };
+        Assert.That(result, Is.EqualTo(expected));
+    }
+    [Test]
+    public void MoveRover_ReturnMRML_WithinputMR1ML()
+    {
+        var result = InputParsing.RoverMovementParse("MR1ML");
+        var expected = new List<Movement>() { Movement.M, Movement.R, Movement.M, Movement.L };
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }

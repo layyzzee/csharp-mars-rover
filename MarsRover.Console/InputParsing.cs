@@ -8,7 +8,6 @@ namespace MarsRover.Terminal
 {
     public class InputParsing
     {
-        private static Plateau _CurrentPlateau;
         public static Plateau? PlateauParser(string input)     //Should take x y
         {
             string[] inputElements = input.Split(' ');
@@ -17,26 +16,14 @@ namespace MarsRover.Terminal
                 Console.WriteLine("Invalid arguments, please input in the format: XCoordinate YCoordinate");
                 return null;
             }
-            try
+            if (int.TryParse(inputElements[0], out int xCoord) && int.TryParse(inputElements[1], out int yCoord))
             {
-                int xCoord = int.Parse(inputElements[0]);
-                int yCoord = int.Parse(inputElements[1]);
-                if (xCoord > 10 || yCoord > 10)
-                {
-                    Console.WriteLine("Grid is too big, keep it 10 or under for both X and Y");
-                    return null;
-                }
-                _CurrentPlateau = new Plateau(xCoord, yCoord);
                 return new Plateau(xCoord, yCoord);
             }
-            catch (FormatException)
-            {
-                Console.WriteLine("Invalid Input Type");
-                return null;
-            }
+            return null;
         }
 
-        public static Position? StartingPointParser(string input)
+        public static Position? StartingPointParser(string input) //Should take x y d
         {
             string[] inputElements = input.Split(' ');
             if (inputElements.Length != 3)
@@ -44,12 +31,9 @@ namespace MarsRover.Terminal
                 Console.WriteLine("Invalid arguments, please input in the format: XCoordinate YCoordinate FacingCompassDirection");
                 return null;
             }
-            try
+            if (int.TryParse(inputElements[0], out int xCoord) && int.TryParse(inputElements[1], out int yCoord))
             {
-                int xCoord = int.Parse(inputElements[0]);
-                int yCoord = int.Parse(inputElements[1]);
-                string inputDirection = inputElements[2];
-                Compass? direction = inputDirection switch
+                Compass? direction = inputElements[2] switch
                 {
                     "N" => Compass.N,
                     "E" => Compass.E,
@@ -57,11 +41,6 @@ namespace MarsRover.Terminal
                     "W" => Compass.W,
                     _ => null
                 };
-                if (xCoord > _CurrentPlateau.Length|| yCoord > _CurrentPlateau.Height)
-                {
-                    Console.WriteLine("Starting Point is Outside the Current Plateau");
-                    return null;
-                }
                 if (direction != null)
                 {
                     return new Position(xCoord, yCoord, direction.Value);
@@ -69,16 +48,28 @@ namespace MarsRover.Terminal
                 Console.WriteLine("Invalid Direction Argument, Please Use One Of: N E S W");
                 return null;
             }
-            catch (FormatException)
-            {
-                Console.WriteLine("Invalid Input Type");
-                return null;
-            }
+            Console.WriteLine("Invalid Co-ordinates, Please Use Valid Integers");
+            return null;
         }
 
-        public static void MoveRover(string input)
+        public static List<Movement> RoverMovementParse(string input) //Should take LMRM string
         {
-
+            var movementList = new List<Movement>();
+            foreach(char c in input.ToUpper())
+            {
+                switch (c)
+                {
+                    case 'L': movementList.Add(Movement.L); break;
+                    case 'R': movementList.Add(Movement.R); break;
+                    case 'M': movementList.Add(Movement.M); break;
+                    default: continue;
+                }
+            }
+            if (movementList.Count > 0)
+            {
+                return movementList;
+            }
+            return null;
         }
     }
 }
