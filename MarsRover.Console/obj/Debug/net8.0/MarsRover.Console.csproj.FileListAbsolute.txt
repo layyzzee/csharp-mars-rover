@@ -1,0 +1,15 @@
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Console.exe
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Console.deps.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Console.runtimeconfig.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Console.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Console.pdb
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.AssemblyInfoInputs.cache
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.AssemblyInfo.cs
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.csproj.CoreCompileInputs.cache
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.sourcelink.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\refint\MarsRover.Console.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.pdb
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Console.genruntimeconfig.cache
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\ref\MarsRover.Console.dll
