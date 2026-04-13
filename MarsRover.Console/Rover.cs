@@ -14,11 +14,11 @@ namespace MarsRover.Terminal
             CurrentPosition = startingPosition;
         }
 
-        public void Rotate(Movement movement)
+        public void Rotate(Instruction movement)
         {
             Compass currentDirection = CurrentPosition.Direction;
             Compass nextDirection = currentDirection;
-            if (movement == Movement.R)
+            if (movement == Instruction.R)
             {
                 nextDirection = currentDirection switch
                 {
@@ -29,7 +29,7 @@ namespace MarsRover.Terminal
                     _ => currentDirection
                 };
             }
-            else if (movement == Movement.L)
+            else if (movement == Instruction.L)
             {
                 nextDirection = currentDirection switch
                 {

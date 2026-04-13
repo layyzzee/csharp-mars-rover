@@ -14,7 +14,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.N);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.R);
+            rover.Rotate(Instruction.R);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
         }
         [Test]
@@ -22,7 +22,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.E);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.R);
+            rover.Rotate(Instruction.R);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
         }
         [Test]
@@ -30,7 +30,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.S);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.R);
+            rover.Rotate(Instruction.R);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
         }
         [Test]
@@ -38,7 +38,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.W);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.R);
+            rover.Rotate(Instruction.R);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
         }
         [Test]
@@ -46,7 +46,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.N);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.L);
+            rover.Rotate(Instruction.L);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
         }
         [Test]
@@ -54,7 +54,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.E);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.L);
+            rover.Rotate(Instruction.L);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
         }
         [Test]
@@ -62,7 +62,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.S);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.L);
+            rover.Rotate(Instruction.L);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
         }
         [Test]
@@ -70,7 +70,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.W);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.L);
+            rover.Rotate(Instruction.L);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
         }
         [Test]
@@ -78,7 +78,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(0, 0, Compass.W);
             var rover = new Rover(startPos);
-            rover.Rotate(Movement.M);
+            rover.Rotate(Instruction.M);
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
         }
         [Test]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Terminal
 {
-    public class InputParsing
+    public class InputParser
     {
         public static Plateau? PlateauParser(string input)
         {
@@ -39,11 +39,11 @@ namespace MarsRover.Terminal
                 "W" => Compass.W,
                 _ => null
             };
-            if (int.TryParse(inputElements[0], out int xCoord) && int.TryParse(inputElements[1], out int yCoord))
+            if (int.TryParse(inputElements[0], out int x) && int.TryParse(inputElements[1], out int y))
             {
                 if (direction != null)
                 {
-                    return new Position(xCoord, yCoord, direction.Value);
+                    return new Position(x, y, direction.Value);
                 }
                 Console.WriteLine("Invalid Direction Argument, Please Use One Of: N E S W");
                 return null;
@@ -52,16 +52,16 @@ namespace MarsRover.Terminal
             return null;
         }
 
-        public static List<Movement>? RoverMovementParse(string input)
+        public static List<Instruction>? RoverMovementParse(string input)
         {
-            var movementList = new List<Movement>();
+            var movementList = new List<Instruction>();
             foreach(char c in input.ToUpper())
             {
                 switch (c)
                 {
-                    case 'L': movementList.Add(Movement.L); break;
-                    case 'R': movementList.Add(Movement.R); break;
-                    case 'M': movementList.Add(Movement.M); break;
+                    case 'L': movementList.Add(Instruction.L); break;
+                    case 'R': movementList.Add(Instruction.R); break;
+                    case 'M': movementList.Add(Instruction.M); break;
                     default: continue;
                 }
             }
@@ -70,6 +70,27 @@ namespace MarsRover.Terminal
                 return movementList;
             }
             return null;
+        }
+
+        public static List<Instruction> InstructionParser(string input)
+        {
+            var instructionList = new List<Instruction>();
+            foreach (char c in input)
+            {
+                if (Enum.TryParse(c.ToString(), out Instruction instruction))
+                {
+                    instructionList.Add(instruction);
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            if (instructionList.Count == 0)
+            {
+                throw new ArgumentException("Invalid input format for instructions. Expected characters: 'L', 'R', 'M'");
+            }
+            return instructionList;
         }
     }
 }

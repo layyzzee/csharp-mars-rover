@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Terminal
 {
-    public enum Movement
+    public enum Instruction
     {
         L,  //Turn Left
         R,  //Turn Right
