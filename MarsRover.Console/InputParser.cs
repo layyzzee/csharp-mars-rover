@@ -8,7 +8,7 @@ namespace MarsRover.Terminal
 {
     public class InputParser
     {
-        public static Plateau? PlateauParser(string input)
+        public static PlateauSize? PlateauParser(string input)
         {
             string[] inputElements = input.Split(' ');
             if (inputElements.Length != 2)
@@ -18,7 +18,7 @@ namespace MarsRover.Terminal
             }
             if (int.TryParse(inputElements[0], out int xCoord) && int.TryParse(inputElements[1], out int yCoord))
             {
-                return new Plateau(xCoord, yCoord);
+                return new PlateauSize(xCoord, yCoord);
             }
             return null;
         }

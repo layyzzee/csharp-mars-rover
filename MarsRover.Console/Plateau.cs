@@ -9,6 +9,7 @@ namespace MarsRover.Terminal
     public record class Plateau
     {
         private readonly PlateauSize _size;
+        public readonly Plateau CurrentPlateau;
         public Plateau(PlateauSize size)
         {
             _size = size;
