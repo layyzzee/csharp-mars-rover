@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2AQTrynL9uo=",
+  "dgSpecHash": "H4N/FklB1CI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\MarsRover.Console.csproj",
+  "projectFilePath": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\MarsRover.Terminal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\katis\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
     "C:\\Users\\katis\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",

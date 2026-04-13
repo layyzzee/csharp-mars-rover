@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\MarsRover.Console.csproj",
-      "projectName": "MarsRover.Console",
-      "projectPath": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\MarsRover.Console.csproj",
+      "projectUniqueName": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\MarsRover.Terminal.csproj",
+      "projectName": "MarsRover.Terminal",
+      "projectPath": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\MarsRover.Terminal.csproj",
       "packagesPath": "C:\\Users\\katis\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\katis\\Documents\\northcoders\\projects\\csharp-mars-rover\\MarsRover\\MarsRover.Console\\obj\\",
       "projectStyle": "PackageReference",

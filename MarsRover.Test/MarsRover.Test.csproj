@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MarsRover.Console\MarsRover.Console.csproj" />
+    <ProjectReference Include="..\MarsRover.Console\MarsRover.Terminal.csproj" />
   </ItemGroup>
 
   <ItemGroup>

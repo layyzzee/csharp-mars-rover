@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarsRover.Console
+namespace MarsRover.Terminal
 {
-    public record class PlateauSize
+    public record class Plateau
     {
-        public int Width { get; set; }
+        public int Length { get; set; }
         public int Height { get; set; }
-        public PlateauSize(int width, int height)
+        public Plateau(int length, int height)
         {
-            Width = width;
+            Length = length;
             Height = height;
         }
     }

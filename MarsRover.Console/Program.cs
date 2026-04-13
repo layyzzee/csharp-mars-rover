@@ -1,6 +1,6 @@
-﻿namespace MarsRover
+﻿namespace MarsRover.Terminal
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

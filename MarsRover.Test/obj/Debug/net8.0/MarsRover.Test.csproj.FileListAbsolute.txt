@@ -1,8 +1,5 @@
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\CoverletSourceRootsMapping_MarsRover.Test
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\testhost.dll
-C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Console.deps.json
-C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Console.runtimeconfig.json
-C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Console.exe
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\testhost.exe
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\NUnit3.TestAdapter.dll
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\NUnit3.TestAdapter.pdb
@@ -90,8 +87,6 @@ C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRo
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Console.dll
-C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Console.pdb
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\obj\Debug\net8.0\MarsRover.Test.csproj.AssemblyReference.cache
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\obj\Debug\net8.0\MarsRover.Test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\obj\Debug\net8.0\MarsRover.Test.AssemblyInfoInputs.cache
@@ -104,3 +99,8 @@ C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRo
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\obj\Debug\net8.0\MarsRover.Test.pdb
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\obj\Debug\net8.0\MarsRover.Test.genruntimeconfig.cache
 C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\obj\Debug\net8.0\ref\MarsRover.Test.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Terminal.deps.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Terminal.runtimeconfig.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Terminal.exe
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Terminal.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Test\bin\Debug\net8.0\MarsRover.Terminal.pdb

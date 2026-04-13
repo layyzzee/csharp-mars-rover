@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MarsRover.Terminal/1.0.0": {
+        "runtime": {
+          "MarsRover.Terminal.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MarsRover.Terminal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

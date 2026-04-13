@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarsRover.Console
+namespace MarsRover.Terminal
 {
     public record class Position
     {

@@ -1,0 +1,15 @@
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Terminal.exe
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Terminal.deps.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Terminal.runtimeconfig.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Terminal.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\bin\Debug\net8.0\MarsRover.Terminal.pdb
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.AssemblyInfoInputs.cache
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.AssemblyInfo.cs
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.csproj.CoreCompileInputs.cache
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.sourcelink.json
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\refint\MarsRover.Terminal.dll
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.pdb
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\MarsRover.Terminal.genruntimeconfig.cache
+C:\Users\katis\Documents\northcoders\projects\csharp-mars-rover\MarsRover\MarsRover.Console\obj\Debug\net8.0\ref\MarsRover.Terminal.dll
