@@ -12,6 +12,7 @@ namespace MarsRover.Terminal
         public  Rover? myRover;
         public Rover? otherRover;
         public bool isRunning = true;
+        public int counter = 0;
 
         public UserInterface()
         {
@@ -21,7 +22,8 @@ namespace MarsRover.Terminal
 
         public bool GameOver()
         {
-            bool collision = (myRover.CurrentPosition.XCoord == otherRover.CurrentPosition.XCoord) && (myRover.CurrentPosition.YCoord == myRover.CurrentPosition.YCoord);            
+            bool collision = ((myRover.CurrentPosition.XCoord == otherRover.CurrentPosition.XCoord) && (myRover.CurrentPosition.YCoord == myRover.CurrentPosition.YCoord)
+                || counter == 10);            
                 isRunning = !collision;
             Console.WriteLine("Game Over");
                 return collision;            
@@ -109,6 +111,7 @@ namespace MarsRover.Terminal
                 {
                     Console.WriteLine($"You successfully moved from {oldPosition.XCoord},{oldPosition.YCoord} facing {oldPosition.Direction} to " +
                         $"{myRover.CurrentPosition.XCoord},{myRover.CurrentPosition.YCoord} facing {myRover.CurrentPosition.Direction} with a registered input of {result}");
+                    counter++;
                 }
                 else
                 {
