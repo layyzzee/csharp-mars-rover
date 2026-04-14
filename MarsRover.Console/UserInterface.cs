@@ -143,6 +143,31 @@ namespace MarsRover.Terminal
             }
             while (myRover.CurrentPosition.XCoord == randPos.XCoord && myRover.CurrentPosition.YCoord == randPos.YCoord);
             otherRover = new Rover(randPos);
+            Console.WriteLine("Beware, we have reports of space pirates in your AO");
+        }
+
+        public void CheckProximity()
+        {
+            int distance = (int)Math.Round(Math.Sqrt(
+                Math.Pow(myRover.CurrentPosition.XCoord - otherRover.CurrentPosition.XCoord, 2) +
+                Math.Pow(myRover.CurrentPosition.YCoord - otherRover.CurrentPosition.YCoord, 2)
+            ));
+            Proximity currentProximity = distance switch
+            {
+                < 2 => Proximity.VeryClose,
+                < 5 => Proximity.Close,
+                < 10 => Proximity.Medium,
+                _ => Proximity.Far
+            };
+            string proxmessage = currentProximity switch
+            {
+                Proximity.VeryClose => "You're really warm",
+                Proximity.Close => "You're warm",
+                Proximity.Medium => "You're a little warm",
+                Proximity.Far => "You're cold",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            Console.WriteLine(proxmessage);
         }
     }
 }
