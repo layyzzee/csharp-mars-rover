@@ -86,7 +86,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(3, 2, Compass.N);
             var rover = new Rover(startPos);
-            rover.Move();
+            rover.MoveForward();
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
@@ -96,7 +96,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(3, 4, Compass.S);
             var rover = new Rover(startPos);
-            rover.Move();
+            rover.MoveForward();
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
@@ -106,7 +106,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(2, 3, Compass.E);
             var rover = new Rover(startPos);
-            rover.Move();
+            rover.MoveForward();
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
@@ -116,7 +116,7 @@ namespace MarsRover.Test
         {
             var startPos = new Position(4, 3, Compass.W);
             var rover = new Rover(startPos);
-            rover.Move();
+            rover.MoveForward();
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));

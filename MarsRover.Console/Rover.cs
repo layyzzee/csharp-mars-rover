@@ -43,7 +43,7 @@ namespace MarsRover.Terminal
             CurrentPosition = CurrentPosition with { Direction = nextDirection };
         }
 
-        public void Move()
+        public void MoveForward()
         {
             var currentDirection = CurrentPosition.Direction;
             switch (currentDirection)
