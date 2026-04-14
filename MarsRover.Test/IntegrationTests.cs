@@ -17,19 +17,9 @@ namespace MarsRover.Test
             var movements1 = "LMLMLMLMM";
             var parsedPlateau = InputParser.PlateauParser(plateauInts);
             var parsedStartingPos1 = InputParser.StartingPointParser(startingPos1);
-            var parsedMovements1 = InputParser.RoverMovementParse(movements1);
+            var parsedMovements1 = InputParser.InstructionParser(movements1);
             var rover1 = new Rover(parsedStartingPos1);
-            foreach (var move in parsedMovements1)
-            {
-                if (move == Instruction.L || move == Instruction.R)
-                {
-                    rover1.Rotate(move);
-                }
-                else if (move == Instruction.M)
-                {
-                    rover1.Move();
-                }
-            }
+            rover1.Drive(parsedMovements1);
             Assert.That(rover1.CurrentPosition.XCoord, Is.EqualTo(1));
             Assert.That(rover1.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover1.CurrentPosition.Direction, Is.EqualTo(Compass.N));
@@ -42,19 +32,9 @@ namespace MarsRover.Test
             var movements2 = "MMRMMRMRRM";
             var parsedPlateau = InputParser.PlateauParser(plateauInts);
             var parsedStartingPos2 = InputParser.StartingPointParser(startingPos2);
-            var parsedMovements2 = InputParser.RoverMovementParse(movements2);
+            var parsedMovements2 = InputParser.InstructionParser(movements2);
             var rover2 = new Rover(parsedStartingPos2);
-            foreach (var move in parsedMovements2)
-            {
-                if (move == Instruction.L || move == Instruction.R)
-                {
-                    rover2.Rotate(move);
-                }
-                else if (move == Instruction.M)
-                {
-                    rover2.Move();
-                }
-            }
+            rover2.Drive(parsedMovements2);
             Assert.That(rover2.CurrentPosition.XCoord, Is.EqualTo(5));
             Assert.That(rover2.CurrentPosition.YCoord, Is.EqualTo(1));
             Assert.That(rover2.CurrentPosition.Direction, Is.EqualTo(Compass.E));

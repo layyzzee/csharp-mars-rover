@@ -11,15 +11,14 @@ namespace MarsRover.Terminal
         public static PlateauSize? PlateauParser(string input)
         {
             string[] inputElements = input.Split(' ');
-            if (inputElements.Length != 2)
+            if (inputElements.Length == 2)
             {
-                Console.WriteLine("Invalid arguments, please input in the format: XCoordinate YCoordinate");
-                return null;
+                if (int.TryParse(inputElements[0], out int x) && int.TryParse(inputElements[1], out int y))
+                {
+                    return new PlateauSize(x, y);
+                }
             }
-            if (int.TryParse(inputElements[0], out int xCoord) && int.TryParse(inputElements[1], out int yCoord))
-            {
-                return new PlateauSize(xCoord, yCoord);
-            }
+            Console.WriteLine("Invalid arguments, please input in the format: XCoordinate YCoordinate");
             return null;
         }
 

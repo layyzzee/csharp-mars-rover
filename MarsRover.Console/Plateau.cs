@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Terminal
 {
-    public record class Plateau
+    public class Plateau
     {
-        private readonly PlateauSize _size;
-        public readonly Plateau CurrentPlateau;
+        private PlateauSize _size;
+        public Plateau CurrentPlateau;
+        public int Length => _size.length;
+        public int height => _size.height;
         public Plateau(PlateauSize size)
         {
+            if (size == null) throw new ArgumentNullException();
+            if((size.length < 0 || size.height < 0) || (size.length > 10 || size.height > 10))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             _size = size;
-            if(size.Lengh < 0 || size.Height < 0) throw new ArgumentOutOfRangeException("Input must be Positive input");
-            if (size.Lengh > 10 || size.Height > 10) throw new ArgumentOutOfRangeException("Input must be less than 10");
         }
-        public bool IsWithinPlateau(int xCoord, int yCoord)
+        public bool IsWithinPlateauSize(int xCoord, int yCoord)
         {
-            return xCoord >= 0 && xCoord <= _size.Lengh && yCoord >= 0 && yCoord <= _size.Height;
+            return xCoord >= 0 && xCoord <= _size.length && yCoord >= 0 && yCoord <= _size.height;
         }
     }
 }

@@ -82,43 +82,78 @@ namespace MarsRover.Test
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
         }
         [Test]
-        public void Move_ReturnX3Y3_WhenInputX3Y2N()
+        public void MoveForward_ReturnX3Y3_WhenInputX3Y2N()
         {
             var startPos = new Position(3, 2, Compass.N);
             var rover = new Rover(startPos);
-            rover.MoveForward();
+            rover.MoveForward(Instruction.M);
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
         }
         [Test]
-        public void Move_ReturnX3Y3_WhenInputX3Y4S()
+        public void MoveForward_ReturnX3Y3_WhenInputX3Y4S()
         {
             var startPos = new Position(3, 4, Compass.S);
             var rover = new Rover(startPos);
-            rover.MoveForward();
+            rover.MoveForward(Instruction.M);
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.S));
         }
         [Test]
-        public void Move_ReturnX3Y3_WhenInputX2Y3E()
+        public void MoveForward_ReturnX3Y3_WhenInputX2Y3E()
         {
             var startPos = new Position(2, 3, Compass.E);
             var rover = new Rover(startPos);
-            rover.MoveForward();
+            rover.MoveForward(Instruction.M);
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
         }
         [Test]
-        public void Move_ReturnX3Y3_WhenInputX4Y4W()
+        public void MoveForward_ReturnX3Y3_WhenInputX4Y4W()
         {
             var startPos = new Position(4, 3, Compass.W);
             var rover = new Rover(startPos);
-            rover.MoveForward();
+            rover.MoveForward(Instruction.M);
             Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
             Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
+        }
+
+        [Test]
+        public void Drive_ReturnX3Y3N_WhenInputX3Y2NWithM()
+        {
+            var startPos = new Position(3,2, Compass.N);
+            var rover = new Rover(startPos);
+            var input = new List<Instruction> { Instruction.M };
+            var result = rover.Drive(input);
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(3));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.N));
+        }
+
+        [Test]
+        public void Drive_ReturnX4Y2E_WhenInputX3Y2NWithRM()
+        {
+            var startPos = new Position(3, 2, Compass.N);
+            var rover = new Rover(startPos);
+            var input = new List<Instruction> { Instruction.R, Instruction.M };
+            var result = rover.Drive(input);
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(4));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(2));
+            Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.E));
+        }
+        [Test]
+        public void Drive_ReturnX2Y1N_WhenInputX0Y0NWithList()
+        {
+            var startPos = new Position(0, 0, Compass.N);
+            var rover = new Rover(startPos);
+            var input = new List<Instruction> { Instruction.M, Instruction.R, Instruction.M, Instruction.M, Instruction.L, Instruction.L };
+            var result = rover.Drive(input);
+            Assert.That(rover.CurrentPosition.XCoord, Is.EqualTo(2));
+            Assert.That(rover.CurrentPosition.YCoord, Is.EqualTo(1));
             Assert.That(rover.CurrentPosition.Direction, Is.EqualTo(Compass.W));
         }
     }

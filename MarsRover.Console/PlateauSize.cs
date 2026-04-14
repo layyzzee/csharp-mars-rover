@@ -6,5 +6,10 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Terminal
 {
-    public record class PlateauSize(int Lengh, int Height);
+    public record class PlateauSize(int length, int height)
+    {
+        public int Length = length;
+        public int Height = height;
+    }
+
 }

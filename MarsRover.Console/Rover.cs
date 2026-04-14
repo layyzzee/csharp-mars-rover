@@ -16,43 +16,61 @@ namespace MarsRover.Terminal
 
         public void Rotate(Instruction movement)
         {
-            Compass currentDirection = CurrentPosition.Direction;
-            Compass nextDirection = currentDirection;
+            Compass nextDirection = CurrentPosition.Direction;
             if (movement == Instruction.R)
             {
-                nextDirection = currentDirection switch
+                nextDirection = CurrentPosition.Direction switch
                 {
                     Compass.N => Compass.E,
                     Compass.E => Compass.S,
                     Compass.S => Compass.W,
                     Compass.W => Compass.N,
-                    _ => currentDirection
+                    _ => CurrentPosition.Direction
                 };
             }
             else if (movement == Instruction.L)
             {
-                nextDirection = currentDirection switch
+                nextDirection = CurrentPosition.Direction switch
                 {
                     Compass.N => Compass.W,
                     Compass.W => Compass.S,
                     Compass.S => Compass.E,
                     Compass.E => Compass.N,
-                    _ => currentDirection
+                    _ => CurrentPosition.Direction
                 };
             }
             CurrentPosition = CurrentPosition with { Direction = nextDirection };
         }
 
-        public void MoveForward()
+        public void MoveForward(Instruction Movement)
         {
-            var currentDirection = CurrentPosition.Direction;
-            switch (currentDirection)
+            if (Movement == Instruction.M)
             {
-                case Compass.N: CurrentPosition = CurrentPosition with { YCoord = CurrentPosition.YCoord + 1 }; break;
-                case Compass.E: CurrentPosition = CurrentPosition with { XCoord = CurrentPosition.XCoord + 1 }; break;
-                case Compass.S: CurrentPosition = CurrentPosition with { YCoord = CurrentPosition.YCoord - 1 }; break;
-                case Compass.W: CurrentPosition = CurrentPosition with { XCoord = CurrentPosition.XCoord - 1 }; break;
+                switch (CurrentPosition.Direction)
+                {
+                    case Compass.N: CurrentPosition = CurrentPosition with { YCoord = CurrentPosition.YCoord + 1 }; break;
+                    case Compass.E: CurrentPosition = CurrentPosition with { XCoord = CurrentPosition.XCoord + 1 }; break;
+                    case Compass.S: CurrentPosition = CurrentPosition with { YCoord = CurrentPosition.YCoord - 1 }; break;
+                    case Compass.W: CurrentPosition = CurrentPosition with { XCoord = CurrentPosition.XCoord - 1 }; break;
+                }
             }
+        }
+
+        public Position Drive(List<Instruction> input)
+        {
+            var currentPosition = CurrentPosition;
+            foreach (var instruction in input)
+            {
+                if (instruction == Instruction.M)
+                {
+                    MoveForward(instruction);
+                }
+                else
+                {
+                    Rotate(instruction);
+                }
+            }
+            return CurrentPosition;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using MarsRover.Terminal;
 using NUnit.Framework;
 
-namespace MarsRover.Tests;
+namespace MarsRover.Test;
 
 public class InputParsingTest
 {
@@ -15,6 +15,12 @@ public class InputParsingTest
     public void PlateauParser_ReturnNull_WithinputBlankSpace()
     {
         var result = InputParser.PlateauParser(" ");
+        Assert.That(result, Is.Null);
+    }
+    [Test]
+    public void PlateauParser_ReturnNull_WithinputL()
+    {
+        var result = InputParser.PlateauParser("L");
         Assert.That(result, Is.Null);
     }
     [Test]
@@ -33,33 +39,36 @@ public class InputParsingTest
     public void PlateauParser_Return5x5_Withinputx5y5()
     {
         var result = InputParser.PlateauParser("5 5");
-        var expected = new Plateau(5, 5);
+        var expected = new PlateauSize(5, 5);
         Assert.That(result == expected, Is.True);
     }
     [Test]
     public void PlateauParser_Return9x9_Withinputx9y9()
     {
         var result = InputParser.PlateauParser("9 9");
-        var expected = new Plateau(9, 9);
+        var expected = new PlateauSize(9, 9);
         Assert.That(result == expected, Is.True);
     }
     [Test]
-    public void PlateauParser_ReturnError_Withinputx15y5()
+    public void PlateauParser_Return15x15y_Withinputx15y5()
     {
-        Assert.Throws<ArgumentOutOfRangeException>(() => 
-        InputParser.PlateauParser("15 5"));
+        var result = InputParser.PlateauParser("15 5");
+        var expected = new PlateauSize(15, 5);
+        Assert.That(result == expected, Is.True);
     }
     [Test]
-    public void PlateauParser_ReturnError_Withinputx5y15()
+    public void PlateauParser_Returnx5y15_Withinputx5y15()
     {
-        Assert.Throws<ArgumentOutOfRangeException>(() =>
-        InputParser.PlateauParser("5 15"));
+        var result = InputParser.PlateauParser("5 15");
+        var expected = new PlateauSize(5, 15);
+        Assert.That(result == expected, Is.True);
     }
     [Test]
     public void PlateauParser_ReturnNull_Withinputx15y15()
     {
-        Assert.Throws<ArgumentOutOfRangeException>(() =>
-        InputParser.PlateauParser("15 15"));
+        var result = InputParser.PlateauParser("15 15");
+        var expected = new PlateauSize(15, 15);
+        Assert.That(result == expected, Is.True);
     }
     [Test]
     public void StartingPointParser_ReturnX3Y6N_WithinputX3Y6N()

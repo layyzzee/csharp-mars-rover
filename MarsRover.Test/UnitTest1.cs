@@ -2,7 +2,7 @@ using MarsRover.Terminal;
 using NUnit.Framework;
 using System.Threading.Channels;
 
-namespace MarsRover.Tests;
+namespace MarsRover.Test;
 
 public class HelloWorldTests
 {
