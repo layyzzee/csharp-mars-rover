@@ -1,12 +1,14 @@
 ﻿# Mars Rover
-A terminal app for moving Rovers around on the surface of Mars.
+A unique twist of a mars rover project.
 
 ## Description
 What is this Mars Rover project?
 This project is a fun, interactive way to consolidate different aspects of learning C#, and the fundamentals of Visual Studio 2022.
 
-Congratulations! You have successfully landed on Mars with your rover on your solo mission! Now it's your time to explore the surface of the planet (In this case its just a 2d grid).
-Take ontrol of the rover, and utilise the available commands to navigate this new planet! But beware the space pirates! If you happen to run into another rover, it will surely be the end!
+Congratulations! You have successfully landed on Mars with your rover on your solo mission!
+Take Control of the rover, and utilise the available commands to navigate this new planet!
+Its important not to forget about those pesky space pirates we've been looking for!
+Your job is to navigate the plateau in search of the space pirates.
 
 ## Controls
 The surface of Mars is represented by a grid, which is of a length and width defined in program.cs, as well as your starting co-ordinates of said grid.
