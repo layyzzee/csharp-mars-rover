@@ -54,7 +54,8 @@ namespace MarsRover.Terminal
         public static List<Instruction> InstructionParser(string input)
         {
             var instructionList = new List<Instruction>();
-            foreach (char c in input)
+            var inputUpper = input.ToUpper();
+            foreach (char c in inputUpper)
             {
                 if (Enum.TryParse(c.ToString(), out Instruction instruction))
                 {

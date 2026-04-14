@@ -11,22 +11,28 @@ namespace MarsRover.Terminal
         public  Plateau? gamePlateau;
         public  Rover? myRover;
         public Rover? otherRover;
-        public bool isRunning = true;
-        public int counter = 0;
+        public bool isRunning;
+        public int counter;
 
         public UserInterface()
         {
             gamePlateau = null;
             myRover = null;
+            otherRover = null;
+            counter = 0;
+            isRunning = true;
         }
 
         public bool GameOver()
         {
-            bool collision = ((myRover.CurrentPosition.XCoord == otherRover.CurrentPosition.XCoord) && (myRover.CurrentPosition.YCoord == myRover.CurrentPosition.YCoord)
-                || counter == 10);            
-                isRunning = !collision;
-            Console.WriteLine("Game Over");
-                return collision;            
+            bool collision = ((myRover.CurrentPosition.XCoord == otherRover.CurrentPosition.XCoord) && (myRover.CurrentPosition.YCoord == otherRover.CurrentPosition.YCoord)
+                || counter == 10);
+            if (collision)
+            {
+                isRunning = false;
+                Console.WriteLine("You Win!");
+            }
+            return collision;            
         }
 
         public void WelcomeUser()
@@ -97,18 +103,19 @@ namespace MarsRover.Terminal
         }
         public void PromptForRoverInstructions()
         {
+            Console.WriteLine($"The current counter is at: {counter}/10");
             Console.WriteLine($"The current plateau's dimensions are:\nLength {gamePlateau.Length}, and Height {gamePlateau.height}");
             Console.WriteLine($"The current rover position is:\n{myRover.CurrentPosition.XCoord}, {myRover.CurrentPosition.YCoord}, facing {myRover.CurrentPosition.Direction}");
             Console.WriteLine("Please input the rover instructions you'd like to give (Left, Right or Move) in the format:\n'LMRM'");
             var input = Console.ReadLine();
-            var oldPosition = myRover.CurrentPosition;
+            var oldPosition = new Position(myRover.CurrentPosition.XCoord, myRover.CurrentPosition.YCoord, myRover.CurrentPosition.Direction);
             try
             {
-                var nextPosition = myRover.CurrentPosition;
                 var result = InputParser.InstructionParser(input);
                 myRover.Drive(result);
-                if (myRover.CurrentPosition.XCoord <= gamePlateau.Length || myRover.CurrentPosition.YCoord <= gamePlateau.height)
+                if (myRover.CurrentPosition.XCoord <= gamePlateau.Length && myRover.CurrentPosition.YCoord <= gamePlateau.height && myRover.CurrentPosition.XCoord >= 0 && myRover.CurrentPosition.YCoord >= 0)
                 {
+
                     Console.WriteLine($"You successfully moved from {oldPosition.XCoord},{oldPosition.YCoord} facing {oldPosition.Direction} to " +
                         $"{myRover.CurrentPosition.XCoord},{myRover.CurrentPosition.YCoord} facing {myRover.CurrentPosition.Direction} with a registered input of {result}");
                     counter++;

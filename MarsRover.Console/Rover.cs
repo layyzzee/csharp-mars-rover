@@ -58,7 +58,6 @@ namespace MarsRover.Terminal
 
         public Position Drive(List<Instruction> input)
         {
-            var currentPosition = CurrentPosition;
             foreach (var instruction in input)
             {
                 if (instruction == Instruction.M)

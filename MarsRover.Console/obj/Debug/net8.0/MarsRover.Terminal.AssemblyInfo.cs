@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarsRover.Terminal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0479d863a8d4afcb60b8837eeb2805e8720871e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f0c471e4d6bf2df7eeebe652db3cd085dbd30b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarsRover.Terminal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarsRover.Terminal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
