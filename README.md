@@ -28,7 +28,7 @@ Before you can launch, ensure your local station is equipped with:
 *   **Visual Studio 2022** (Recommended) or **VS Code**
 *   **.NET SDK** (v6.0 or later)
 
-## Development Goals 🏗️
+## Development Goals 📚
 *   **Logic Consolidation:** Mastering conditional statements and loops.
 *   **Input Sanitization:** Learning how to handle and filter user-provided strings.
 *   **Object-Oriented Design:** Modeling the rover and plateau as distinct entities.
