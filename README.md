@@ -23,12 +23,18 @@ To move, you must transmit a **Command String** to the Rover's onboard computer.
 > [!TIP]
 > The Rover’s computer is forgiving! Inputs are **case-insensitive**, and any rogue characters (like spaces or punctuation) will be automatically filtered out. Example: `LMRMMLM`
 
-## System Requirements 🛠️
-Before you can launch, ensure your local station is equipped with:
-*   **Visual Studio 2022** (Recommended) or **VS Code**
-*   **.NET SDK** (v6.0 or later)
+## Tech Stack 🛠️
+This mission was engineered using the following tools and frameworks:
 
-## Development Goals 📚
-*   **Logic Consolidation:** Mastering conditional statements and loops.
-*   **Input Sanitization:** Learning how to handle and filter user-provided strings.
-*   **Object-Oriented Design:** Modeling the rover and plateau as distinct entities.
+*   **Language:** C# 10+
+*   **Framework:** .NET 6.0 / 8.0 (Console Application)
+*   **Environment:** Visual Studio 2022 or VS Code
+*   **Paradigm:** Object-Oriented Programming (OOP)
+
+
+## Technical Highlights 💻
+To solve the challenges of Martian navigation, this project implements:
+
+*   **State Management:** Tracking the Rover's heading (N, E, S, W) and updating coordinates based on directional logic.
+*   **Input Sanitization:** A robust parsing system that filters out rogue characters and handles case-insensitive strings.
+*   **Grid Constraint Logic:** (Optional: add if you have this) Preventing the Rover from moving outside the defined plateau boundaries.
